@@ -1,13 +1,62 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Lato Light";
+  src: url("../public/fonts/Lato-Light.ttf");
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@font-face {
+  font-family: "Lato Regular";
+  src: url("../public/fonts/Lato-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Lato Bold";
+  src: url("../public/fonts/Lato-Bold.ttf");
+}
+
+#home-form {
+  -webkit-box-shadow: 2px 9px 31px -5px #000000;
+  box-shadow: 2px 9px 31px -5px #000000;
+}
+
+#home-container::before {
+  content: "";
+  width: 30%;
+  height: 100%;
+  position: absolute;
+  top: -10%;
+  right: 0;
+  z-index: 1;
+  background-image: url(./assets/bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@screen md {
+  #home-form {
+    min-width: 400px;
+    max-width: 400px;
+  }
+
+  #result-container {
+    max-width: 350px;
+    min-height: 400px !important;
+  }
+
+  #home-container > div::after {
+    content: "";
+    background-image: url(./assets/figure.png);
+    position: absolute;
+    bottom: 0px;
+    width: 500px;
+    height: 500px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
